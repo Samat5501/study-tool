@@ -7,7 +7,8 @@ import { Link, useHistory } from 'react-router-dom'
 import routes from '../../routes'
 import { login_user } from '../../store/actions';
 const Login = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const [inEmail, setInEmail] = useState('')
     const [inPassword, setInPassword] = useState('')
@@ -15,6 +16,10 @@ const Login = () => {
     const success = useSelector((state) => state.success)
 	const localUsers = useSelector((state) => state.localUsers)
 
+    const LoginIn = () => {
+        dispatch(login_user({ inEmail, inPassword }))
+               history.push(routes.user_profile)             
+    }
 
     return (
         <div className="sign">
@@ -39,9 +44,7 @@ const Login = () => {
           </Space>
           {/* {errors.password && <p className="error">{errors.password}</p>} */}
         </div>
-        <CustomButton onClick={() => {
-							dispatch(login_user({ inEmail, inPassword }))
-                            }} className='.buttonSign'>Sign In</CustomButton>
+        <CustomButton onClick={() =>LoginIn()} className='.buttonSign'>Sign In</CustomButton>
         <h3>Don't have an account? <Link to={routes.sign_up}>Sign Up</Link> </h3>
         </div>
     )

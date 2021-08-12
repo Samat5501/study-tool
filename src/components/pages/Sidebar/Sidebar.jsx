@@ -1,6 +1,6 @@
 import React from 'react'
 import './sidebar.css'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import  routes  from '../../routes';
 import { useDispatch, useSelector } from 'react-redux';
 import { remove_info } from '../../store/actions';
@@ -9,10 +9,18 @@ import TagList from './TagList';
 function Sidebar() {
     const dispatch = useDispatch()
     const info = useSelector(state => state.info)
-
-    const remove = () => {
-        info.filter((f) => f.id !== info.id)
+    const success = useSelector(state => state.success)
+    const history = useHistory()
+    
+    const check = () => {
+        if (success) {
+            history.push(routes.list)
+        } else {
+            history.push(routes.sign_up)
+            alert('Please, Sign Up')
+        }
     }
+
     return (
         <div className='sidebar'>
             <ul>
@@ -22,16 +30,21 @@ function Sidebar() {
                 <li>
                     <Link to='/css'>css</Link>
                 </li>
-            
-            <li>{info.map((tag, idx) => {
+                {success ? (
+                <li>{info.map((tag, idx) => {
                 return <Link className='button-detail' to={`/details/${tag.id}`} key={idx}>
                     <ul  key={idx}>
                         <TagList tag={tag} idx={idx} key={idx}/>
                     </ul>
-                    <button onClick={() => dispatch(remove_info(idx))}>x</button>
+                    <button onClick={() => dispatch(remove_info(tag.id))}>x</button>
                 </Link>
             })} </li>
+                ) : (
+                       ""
+            )}
+            
             </ul>
+            <button onClick={() => check()}>add tag ++</button>
         </div>
     )
 }

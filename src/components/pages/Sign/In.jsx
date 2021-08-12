@@ -5,10 +5,13 @@ import { TextField } from '../../TextField';
 import { CustomButton } from '../../CustomButton';
 import { Input, Space } from 'antd';
 import { add_user } from '../../store/actions';
-
 import validation from './Validation'
+import routes from '../../routes';
+import { Link, useHistory } from 'react-router-dom';
+
 const In = () => {
 
+    const history = useHistory()
   // 
   const [values, setValues] = useState({
         name: "",
@@ -37,7 +40,7 @@ const In = () => {
   useEffect(() => {
         if (values.email.trim() && values.name.trim() && values.password.trim()) {
             localStorage.setItem('info', JSON.stringify(state))
-            // history.push('./profile');
+            history.push(routes.user_profile);
         }
     }, [state]);
   
@@ -55,6 +58,7 @@ const In = () => {
                 success: true,
             })    
             )
+
         }
         else {
             setErrors(validation(values))
@@ -98,7 +102,7 @@ const In = () => {
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
         <CustomButton onClick={()=> onAdd()} className='.buttonSign'>sign up</CustomButton>
-        <h3>Already have an account? Sign in</h3>
+        <h3>Already have an account? <Link to={routes.login}>Sign in </Link> </h3>
         </div>
     )
 }
