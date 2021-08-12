@@ -7,7 +7,6 @@ import List from './pages/AddList/Index'
 import Content from './pages/Content/Content'
 import Details from './pages/Details/Details'
 import Home from './pages/Home/Home'
-import MainHome from './MainHome'
 import Nav from './pages/Navbar/Nav'
 import Sidebar from './pages/Sidebar/Sidebar'
 import Html from './pages/SidebarPage/Html/Index'
@@ -20,7 +19,6 @@ import Css from './pages/SidebarPage/Css/Index'
 
 
 function App() {
-
 const state = useSelector((state) => state);
 const currentUser = useSelector((state) => state.currentUser);
 
@@ -39,13 +37,26 @@ useEffect(() => {
     localStorage.setItem('info', JSON.stringify(state))
 }, [info])
   
-
-    return (
+    return (<div className='container'>
       <Router>
             <div className="app-wrapper">
           <Nav />
           <Switch>
-          {state.success ? (
+            <Route exact path={routes.home}>
+               <Home/>
+            </Route>
+            <Route path='/content'>
+               <Main/>
+            </Route>
+             <Route path={routes.user_profile}>
+               <UserProfile/>
+            </Route>
+             <Route path={routes.sign_up} component={In}/>
+             <Route path={routes.login} component={Login}/>
+            {/* <Route path={routes.list}>
+               <List/>
+            </Route> */}
+          {/* {state.success ? (
             <>
                 <Sidebar info={info}/>
               <div className="app-content-wrapper">
@@ -64,10 +75,11 @@ useEffect(() => {
                 <Route path={routes.sign_up} component={In}/>
                 <Route path={routes.login} component={Login}/>
             </div> 
-           )} 
+           )}  */}
            </Switch>
           </div>
       </Router>
+      </div>
     )
 }
 

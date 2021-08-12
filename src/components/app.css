@@ -3,27 +3,38 @@ body{
     padding: 0;
     box-sizing: border-box;
     background: rgb(212, 167, 167);
+    width: 100%;
 }
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+
 .app-wrapper{
   display: grid;
   margin: 0 auto;
-  width: 100%;
+  width: 1350px;
   grid-template-areas: 
-  "n n"
-  "s c"
+  "n n "
+  "s r "
   ;
-
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr  10fr;
 }
- .app-content-wrapper{
-   background-color: #a39d6d;
-   height: 90vh;
-   /* scroll-behavior: smooth; */
+
+ .main__content{
+   margin: 0 auto;
+   display: grid;
+   grid-template-areas: 
+   's r '
+   ;
+  grid-template-rows: 42.2vw 1fr;
+  /* grid-template-columns: 2fr  14fr; */
  }
- .content{
-   grid-area: c;
- }
- /* .main__content{
-   display: flex;
- } */
+
+.main__content-right{
+  height: 90vh;
+  width: 1185px;
+  background: rgb(219, 23, 23);
+}

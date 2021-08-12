@@ -1,32 +1,28 @@
-import React from 'react'
-import { BrowserRouter  as Router, Switch, Route } from 'react-router-dom'
-import  routes  from '../../routes'
-import List from '../AddList/Index'
-import Css from '../SidebarPage/Css/Index'
-import Html12 from '../SidebarPage/Html/Index'
-import './Content.css'
+// import React from 'react'
+// import { BrowserRouter  as Router, Switch, Route } from 'react-router-dom'
+// import  routes  from '../../routes'
+// import List from '../AddList/Index'
+// import Details from '../Details/Details'
+// import Css from '../SidebarPage/Css/Index'
+// import Html from '../SidebarPage/Html/Index'
+// // import './Content.css'
 
+// const Content = () => {
+//     return (
+//         <Router>
+//          <div className='content1'>
+//             <Switch>
+//           <div className="main__content-right">
+//             <Route path={routes.html} component={Html} />
+//             <Route path='/css' component={Css} />
+//             <Route path="/details/:id">
+//               <Details/>
+//             </Route>
+//             <Route path={routes.list} component={List} />
+//           </div>
+//         </Switch>
+//         </div></Router>
+//     )
+// }
 
-const Content = () => {
-    
-    return (
-         <div className='content'>
-            <Router>
-                <Switch>
-                    <Route path={routes.sign_up}>
-                        <List/>
-                        </Route> 
-                         <Route path="/html">
-                        <Html12/>
-                    </Route>
-                    <Route path="/css">
-                        <Css/>
-                    </Route>
-                </Switch>
-                </Router>
-        </div>
-        
-    )
-}
-
-export default Content
+// export default Content
