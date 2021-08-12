@@ -1,0 +1,30 @@
+.main{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.main{
+    width: 100%;
+}
+.main img{
+    width: 990px;
+    height: 90vh;
+}
+
+.block__2{
+    background: rgb(0, 0, 0.6);
+    color: white;
+    width: 347px;
+    height: 90vh;
+}
+
+.main h1{
+    color: white;
+}
+
+.modal{
+    color: white;
+    display: flex;
+}

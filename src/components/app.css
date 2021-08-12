@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(212, 167, 167);
+}
+.app-wrapper{
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  grid-template-areas: 
+  "n n"
+  "s c"
+  ;
+
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr  10fr;
+}
+ .app-content-wrapper{
+   background-color: #a39d6d;
+   height: 90vh;
+   /* scroll-behavior: smooth; */
+ }
+ .content{
+   grid-area: c;
+ }
+ /* .main__content{
+   display: flex;
+ } */
