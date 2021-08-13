@@ -1,28 +1,35 @@
-.sign{
-    background: rgb(255, 255, 255);
+.sign {
+    background: rgb(99, 99, 99);
+    padding: 20px;
 }
 
-.first__input{
+.first__input {
     display: flex;
     margin-top: 20px;
 }
 
-.second__input{
+.second__input {
     width: 400px;
     /* margin-top: 20px; */
 }
 
-input:hover{
-    border: solid 1px blue;
+input:hover {
+    border: solid 1px rgb(36, 36, 216);
 }
 
-.hkOJGu{
+.hkOJGu {
     margin-top: 30px;
 }
 
-.ant-input-affix-wrapper > input.ant-input{
+.ant-input-affix-wrapper>input.ant-input {
     margin-top: 30px;
 }
-.error{
+
+.error {
     color: red;
+}
+
+.password-inp {
+    width: 250px;
+    padding-bottom: 10px;
 }

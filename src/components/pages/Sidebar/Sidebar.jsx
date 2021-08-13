@@ -17,10 +17,10 @@ function Sidebar() {
         <div className='sidebar'>
             <ul>
                 <li>
-                    <Link to='/html'>HTML</Link>
+                    <Link className="link" to='/html'>HTML</Link>
                 </li>
                 <li>
-                    <Link to='/css'>css</Link>
+                    <Link className="link" to='/css'>css</Link>
                 </li>
             
             <li>{info.map((tag, idx) => {

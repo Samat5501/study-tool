@@ -1,18 +1,20 @@
-
 .navbar {
     grid-area: n;
     background-color: #242526;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-    height: 3.75rem;;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    height: 3.75rem;
+    ;
     padding: calc(1 *0.5);
 }
 
-.navbar__fixed-top{
+.navbar__fixed-top {
     position: sticky;
     margin: 0 1px;
     top: 0;
     z-index: 4;
     display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 45px;
 }
 
 .navbar .navbar__inner {
@@ -39,18 +41,12 @@
     margin-left: 20px;
     font-weight: 700;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 35px;
 }
 
-.navbar__brand, .navbar__link {
+.navbar__brand,
+.navbar__link {
     color: white;
-}
-
-.navbar__items {
-    align-items: center;
-    display: flex;
-    min-width: 0px;
-    flex: 1 1 0%;
 }
 
 .navbar__items-right {
@@ -62,10 +58,11 @@
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 35px;
     margin-left: 20px;
 }
-.search{
+
+.search {
     color: rgb(212, 203, 203);
     width: 100px;
     height: 35px;
@@ -76,14 +73,16 @@
     border-radius: 20px;
     cursor: pointer;
 }
-.search:hover{
+
+.search:hover {
     border: cadetblue 3px solid;
 }
-b{
+
+b {
     font-size: 28px;
 }
 
-.home1{
+.home1 {
     font-size: 20px;
     color: white;
 }

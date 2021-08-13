@@ -1,8 +1,17 @@
-span{
-    color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400&display=swap');
+span {
+    color: rgb(68, 68, 218);
 }
-.title{
-    border-bottom: 2px solid red;
-    color: rgb(219, 101, 55);
-    font-size: 20px;
+
+.title {
+    border-bottom: 2px solid rgb(230, 12, 12);
+    color: rgb(215, 61, 0);
+    font-size: 30px;
+    font-family: 'Space Mono', monospace;
+}
+
+.code {
+    font-family: 'Source Code Pro', monospace;
+    color: brown;
 }

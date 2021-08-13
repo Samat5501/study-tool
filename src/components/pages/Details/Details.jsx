@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import './details.css'
+import { Button } from 'antd';
 
 const Details = () => {
     const { title, id} = useParams()
@@ -22,10 +23,10 @@ const Details = () => {
         <div>
             <div>
                 <p className='title'>{item.title}</p>
-                <span>description: </span> 
+                <span>Description: </span> 
                 <p>{item.description}</p>
-                <span>your code:</span>  
-                <p>{item.code}</p>
+                <span>Your code:</span>  
+                <p className="code">{item.code}</p>
                 <span>Link Title:</span>  
                 <p>{item.linkTitle}</p>
                 <span>Link:</span>  
@@ -38,7 +39,7 @@ const Details = () => {
             <input value={title1} onChange={(e) => setTitle(e.target.value)} type="text" />
             <span>Enter List</span>
             <input value={list} onChange={(e) => setList(e.target.value)}  type="text" />
-            <button onClick={onAdd}>Add</button>
+            <Button type="primary" onClick={onAdd}>Add</Button>
         </div>
     )
 }

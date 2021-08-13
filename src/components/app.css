@@ -1,29 +1,30 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: rgb(212, 167, 167);
+    background: rgba(113, 113, 113, 0.406);
 }
-.app-wrapper{
-  display: grid;
-  margin: 0 auto;
-  width: 100%;
-  grid-template-areas: 
-  "n n"
-  "s c"
-  ;
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr  10fr;
+.app-wrapper {
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-areas: "n n" "s c";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
 }
- .app-content-wrapper{
-   background-color: #a39d6d;
-   height: 90vh;
-   /* scroll-behavior: smooth; */
- }
- .content{
-   grid-area: c;
- }
- /* .main__content{
+
+.app-content-wrapper {
+    background-color: #f7f7f782;
+    height: 90vh;
+    /* scroll-behavior: smooth; */
+}
+
+.content {
+    grid-area: c;
+}
+
+
+/* .main__content{
    display: flex;
  } */

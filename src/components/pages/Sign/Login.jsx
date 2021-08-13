@@ -24,13 +24,15 @@ const Login = () => {
             onChange={(e) => setInEmail(e.target.value)}
             placeholder="Enter the Email"
             name="email" type="email"
+            className="email"
           />
            {/* {errors.email && <p className="error">{errors.email}</p>} */}
         </div>
         <div>
-        <Space direction="vertical">
+        <Space direction="vertical"
+        className="password-inp">
             <Input.Password
-            className="password-inp"
+            
             value={inPassword}
             onChange={(e) => setInPassword(e.target.value)}
             placeholder="At least 8 characters long"

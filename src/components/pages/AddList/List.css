@@ -1,5 +1,10 @@
-.list{
+.list {
     display: flex;
     flex-direction: column;
     width: 900px;
+    color: rgb(84, 84, 84);
+}
+
+.input {
+    height: 50px;
 }
