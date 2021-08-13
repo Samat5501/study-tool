@@ -1,21 +1,14 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { BrowserRouter as Router , Route, Switch, useParams,
-  useRouteMatch } from 'react-router-dom'
+import { BrowserRouter as Router , Route, Switch } from 'react-router-dom'
 import './app.css'
-import List from './pages/AddList/Index'
-import Content from './pages/Content/Content'
-import Details from './pages/Details/Details'
 import Home from './pages/Home/Home'
 import Nav from './pages/Navbar/Nav'
-import Sidebar from './pages/Sidebar/Sidebar'
-import Html from './pages/SidebarPage/Html/Index'
 import In from './pages/Sign/In'
 import Login from './pages/Sign/Login'
 import UserProfile from './pages/UserProfile/UserProfile'
 import routes from './routes'
 import Main from './Main'
-import Css from './pages/SidebarPage/Css/Index'
 
 
 function App() {
@@ -24,18 +17,18 @@ const currentUser = useSelector((state) => state.currentUser);
 
   useEffect(() => {
     localStorage.setItem("info", JSON.stringify(state));
-  }, []);
+  }, [state]);
 
   useEffect(() => {
     localStorage.setItem("info", JSON.stringify(state));
-  }, [currentUser]);
+  }, [currentUser, state]);
   //  -------------
 
 const info = useSelector(state => state.info)
 // window.localStorage.clear();
 useEffect(() => {
     localStorage.setItem('info', JSON.stringify(state))
-}, [info])
+}, [info, state])
   
     return (<div className='container'>
       <Router>

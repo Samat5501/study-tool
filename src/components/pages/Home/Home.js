@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { CustomButton } from '../../CustomButton'
 import routes from '../../routes'
-import In from '../Sign/In'
 import './Home.css'
 
 const Home = () => {

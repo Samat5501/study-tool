@@ -2,7 +2,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: rgb(212, 167, 167);
     width: 100%;
 }
 
@@ -35,6 +34,7 @@ body{
 
 .main__content-right{
   height: 90vh;
-  width: 1185px;
-  background: rgb(219, 23, 23);
+  width: 1039px;
+  background: rgb(0, 0, 0);
+  color: white;
 }

@@ -1,4 +1,4 @@
-import { ADD_INFO, ADD_USER, LOGOUT, CURRENT_INFO, LOGIN_USER, REMOVE_INFO } from "../actions";
+import { ADD_INFO, ADD_USER, LOGOUT, LOGIN_USER, REMOVE_INFO, ADD_LIST } from "../actions";
 
 
 const local = JSON.parse(localStorage.getItem('info'))
@@ -7,17 +7,32 @@ const local = JSON.parse(localStorage.getItem('info'))
 
 
 const defaultState = {
-    info: [],
-    localUsers: [],
-    currentUser: { },
-    success: false
+  info: [],
+  localUsers: [],
+  currentUser: {},
+  newList: {
+    firstList: "",
+    secondList: "",
+    id: "",
+  },
+  success: false,
 }
 
 export const infoReducer = (state = local ? local : defaultState, action) => {
     switch (action.type) {
-       
+       // list
+      case ADD_LIST:
+        return {
+          ...state,
+          newList: [
+            ...state.newList,
+            {
+              firstList: action.value.newList.firstList,
+              secondList: action.value.newList.secondList,
+            }
+          ]
+        }
         case ADD_INFO:
-            
             return {
                 ...state,
                 info: [
@@ -80,7 +95,7 @@ export const infoReducer = (state = local ? local : defaultState, action) => {
                     id: ""
                 },
                 success: false
-            }
+        }
         default:
             return state
     }

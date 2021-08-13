@@ -22,7 +22,7 @@ function Sidebar() {
     }
 
     return (
-        <div className='sidebar'>
+        <div className='sidebar side__bar-left'>
             <ul>
                 <li>
                     <Link to='/html'>HTML</Link>
@@ -31,13 +31,17 @@ function Sidebar() {
                     <Link to='/css'>css</Link>
                 </li>
                 {success ? (
-                <li>{info.map((tag, idx) => {
-                return <Link className='button-detail' to={`/details/${tag.id}`} key={idx}>
-                    <ul  key={idx}>
+                    <li>{info.map((tag, idx) => {
+                      return   <>
+                <Link className='button-detail' to={`/details/${tag.id}`} key={idx}>
+                   
+                    <li  key={idx}>
                         <TagList tag={tag} idx={idx} key={idx}/>
-                    </ul>
-                    <button onClick={() => dispatch(remove_info(tag.id))}>x</button>
-                </Link>
+                    </li>
+                   
+                    </Link>
+                    <button onClick={() => dispatch(remove_info(idx))}>x</button>
+                    </>
             })} </li>
                 ) : (
                        ""

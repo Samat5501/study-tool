@@ -1,22 +1,18 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { add_info } from '../../store/actions'
 import { Button } from 'antd';
 
 import './List.css'
 var uniqid = require('uniqid');
 const List = () => {
-    // const info1 = useSelector(state => state.infoReducer)
     const dispatch = useDispatch()
-    // console.log(info1);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [code, setCode] = useState('');
     const [linkTitle, setLinkTitle] = useState('');
     const [link, setLink] = useState('');
-    const [id, setId] = useState(0);
-
 
     const onAdd = () => {
 dispatch(add_info({

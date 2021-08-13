@@ -35,14 +35,14 @@ const In = () => {
 
    useEffect(() => {
         localStorage.setItem('info', JSON.stringify(state));
-    }, [currentUser])
+    }, [state,currentUser])
 
   useEffect(() => {
         if (values.email.trim() && values.name.trim() && values.password.trim()) {
             localStorage.setItem('info', JSON.stringify(state))
-            history.push(routes.user_profile);
+            // history.push(routes.user_profile);
         }
-    }, [state]);
+    }, [state, values.email, values.name, values.password,history]);
   
   const onAdd = () => {
         //  (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value)

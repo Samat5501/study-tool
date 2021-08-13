@@ -9,7 +9,7 @@ const Details = () => {
     const info = useSelector(state => state.info)
    
     const item = info.filter((f) => f.id === id)[0]
-    console.log(item);
+    console.log(item.description);
 
     const [title1, setTitle] = useState('')
     const [list, setList] = useState('')
@@ -22,13 +22,20 @@ const Details = () => {
         <div>
             <div>
                 <p className='title'>{item.title}</p>
-                <span>description: </span> 
+                {item.description ? (
+                <span>description: </span> ):("")}
                 <p>{item.description}</p>
-                <span>your code:</span>  
+                {item.code ? (
+                  <span>your code:</span>   
+                ):("")}
                 <p>{item.code}</p>
-                <span>Link Title:</span>  
+                {item.linkTitle ? (
+                  <span>Link Title:</span>   
+                ):("")}
                 <p>{item.linkTitle}</p>
-                <span>Link:</span>  
+                {item.link ? (
+                <span>Link:</span>
+                ):("")}
                 <a href={item.link}>{item.linkTitle}</a>
                 <span>{title1}</span>
                 <p>{list}</p>
