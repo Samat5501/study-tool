@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,15 +26,43 @@ body{
    margin: 0 auto;
    display: grid;
    grid-template-areas: 
-   's r '
-   ;
-  grid-template-rows: 42.2vw 1fr;
-  /* grid-template-columns: 2fr  14fr; */
- }
+   's r';
+}
 
 .main__content-right{
   height: 90vh;
   width: 1039px;
   background: rgb(0, 0, 0);
   color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .app-wrapper{
+  display: grid;
+  margin: 0 auto;
+  width: 480px;
+  grid-template-areas: 
+  "n  "
+  "s  "
+  ;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr;
+}
+
+.main__content{
+   margin: 0 auto;
+   display: grid;
+   grid-template-areas: 
+   's';
+  /* grid-template-rows: 42.2vw 1fr; */
+  display: flex;
+  flex-direction: column;
+}
+
+.main__content-right{
+  height: 90vh;
+  /* width: 480px; */
+  background: rgb(0, 0, 0);
+  color: white;
+}
 }

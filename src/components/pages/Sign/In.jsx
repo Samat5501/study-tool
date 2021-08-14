@@ -62,7 +62,8 @@ const In = () => {
         }
         else {
             setErrors(validation(values))
-        }
+      }
+      history.push(routes.sign_up)
     }
 
 

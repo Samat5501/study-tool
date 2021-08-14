@@ -11,3 +11,8 @@ span{
 p{
     color: rgb(211, 211, 199);
 }
+
+.code {
+    font-family: 'Source Code Pro', monospace;
+    color: brown;
+}

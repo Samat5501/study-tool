@@ -10,12 +10,9 @@ const defaultState = {
   info: [],
   localUsers: [],
   currentUser: {},
-  newList: {
-    firstList: "",
-    secondList: "",
-    id: "",
-  },
+  newList: [],
   success: false,
+  button: false,
 }
 
 export const infoReducer = (state = local ? local : defaultState, action) => {
@@ -27,8 +24,8 @@ export const infoReducer = (state = local ? local : defaultState, action) => {
           newList: [
             ...state.newList,
             {
-              firstList: action.value.newList.firstList,
-              secondList: action.value.newList.secondList,
+              newTitle: action.value.newTitle,
+              newDescription: action.value.newDescription,
             }
           ]
         }
@@ -46,7 +43,7 @@ export const infoReducer = (state = local ? local : defaultState, action) => {
                         id: action.inf.id,
                     }
                 ],
-                
+                button: true,
             }
         case REMOVE_INFO:
             return {

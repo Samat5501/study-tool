@@ -1,0 +1,30 @@
+.profile{
+    border-top: 10px solid #593d88;
+    display: flex;
+    width: 1341px;
+    height: 90vh;
+}
+.empty__block{
+width: 50%;
+height: 90vh;
+background: #000;
+}
+.profile__user{
+    width: 50%;
+    height: 90vh;
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+.user__item{
+    text-align: center;
+    border: solid 1px rgb(6, 6, 8);
+}
+.p{
+    color: black;
+}
+
+.ss{
+    margin-top: 100px;
+}

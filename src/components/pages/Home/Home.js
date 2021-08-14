@@ -3,25 +3,35 @@ import { Link, useHistory } from 'react-router-dom'
 import { CustomButton } from '../../CustomButton'
 import routes from '../../routes'
 import './Home.css'
+import { homeData } from './HomeData'
 
 const Home = () => {
   const history = useHistory()
   return (
     <div className="main">
       <div className="block__2">
-        <h1>Learn to code with Us</h1>
-        <button onClick={() => history.push("/content")}>get started</button>
-        <div className="modal">
-          <CustomButton>
-            <Link to={routes.sign_up}>Sign UP</Link>
-          </CustomButton>
-          <CustomButton>
-            <Link to={routes.login}>Sign In</Link>
-          </CustomButton>
-        </div>
+        <h1>Learn coding with Us</h1>
+        <button className='home__button' onClick={() => history.push("/content")}>Get Started</button>
       </div>
       <div className="black__block">
-        <h1>This site is developed with react and redux</h1>
+        <h2>This site is developed</h2>
+        <h1>with</h1>
+        <div className='homeData'>
+          {homeData.map((el, idx) => {
+            const {img, text} = el
+            return (
+              <div key={idx} className='main_homeData'>
+          <div className='home__img'>
+          <img src={img} alt=''/>
+                </div>
+                <div className='home__text'>
+                  {text}
+              </div>
+              </div>
+            )
+          })}
+        </div>
+        
       </div>
     </div>
   );
