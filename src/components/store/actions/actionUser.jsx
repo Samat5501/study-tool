@@ -24,7 +24,3 @@ export const delete_user = (password, email, obj) => ({
   email,
   obj,
 });
-export const edit_user = (obj) => ({
-  type: EDIT_USER,
-  obj,
-});

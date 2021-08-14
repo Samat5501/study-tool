@@ -11,6 +11,7 @@ function Sidebar() {
     const info = useSelector(state => state.info)
     const success = useSelector(state => state.success)
     const history = useHistory()
+    console.log(info);
     
     const check = () => {
         if (success) {
@@ -22,29 +23,30 @@ function Sidebar() {
     }
 
     return (
-        <div className='sidebar'>
+        <div className='sidebar side__bar-left'>
             <ul>
                 <li>
-                    <Link to='/html'>HTML</Link>
+                    <Link className="link" to='/html'>HTML</Link>
                 </li>
                 <li>
-                    <Link to='/css'>css</Link>
+                    <Link className="link" to='/css'>css</Link>
                 </li>
-                {success ? (
-                <li>{info.map((tag, idx) => {
-                return <Link className='button-detail' to={`/details/${tag.id}`} key={idx}>
-                    <ul  key={idx}>
+                {success ? (<>
+                    <li>{info.map((tag, idx) => {
+                        return <div className='sidebar__tag'>
+                     <Link className='button-detail' to={`/details/${tag.id}`} key={idx}>
+                    <li  key={idx}>
                         <TagList tag={tag} idx={idx} key={idx}/>
-                    </ul>
-                    <button onClick={() => dispatch(remove_info(tag.id))}>x</button>
-                </Link>
+                    </li>
+                   
+                    </Link>
+                    <div className='remove__btn' onClick={() => dispatch(remove_info(idx))}>x</div>
+                   </div> 
             })} </li>
-                ) : (
-                       ""
-            )}
-            
+                </>) : ("")}
+                    
             </ul>
-            <button onClick={() => check()}>add tag ++</button>
+            <button className='tag__btn' onClick={() => check()}>Tag ++</button>
         </div>
     )
 }

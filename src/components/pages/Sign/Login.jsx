@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { TextField } from '../../TextField'
 import { CustomButton } from '../../CustomButton';
 import { Input, Space } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom'
 import routes from '../../routes'
 import { login_user } from '../../store/actions';
@@ -12,9 +12,6 @@ const Login = () => {
 
     const [inEmail, setInEmail] = useState('')
     const [inPassword, setInPassword] = useState('')
-    
-    const success = useSelector((state) => state.success)
-	const localUsers = useSelector((state) => state.localUsers)
 
     const LoginIn = () => {
         dispatch(login_user({ inEmail, inPassword }))
@@ -29,13 +26,15 @@ const Login = () => {
             onChange={(e) => setInEmail(e.target.value)}
             placeholder="Enter the Email"
             name="email" type="email"
+            className="email"
           />
            {/* {errors.email && <p className="error">{errors.email}</p>} */}
         </div>
         <div>
-        <Space direction="vertical">
+        <Space direction="vertical"
+        className="password-inp">
             <Input.Password
-            className="password-inp"
+            
             value={inPassword}
             onChange={(e) => setInPassword(e.target.value)}
             placeholder="At least 8 characters long"

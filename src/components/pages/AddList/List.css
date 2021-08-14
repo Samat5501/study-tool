@@ -1,5 +1,12 @@
-.list{
+.list {
     display: flex;
     flex-direction: column;
     width: 900px;
+    color: black;
+    height: 90vh;
+    overflow: scroll;
+}
+
+input{
+    color: black;
 }
