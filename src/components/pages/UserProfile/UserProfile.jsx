@@ -4,42 +4,36 @@ import { useHistory } from 'react-router-dom';
 import routes from '../../routes';
 import { log_out } from '../../store/actions';
 import "./profile.css"
-import { slide as Menu } from 'react-burger-menu'
+import { BiHomeCircle, BiLogOutCircle } from 'react-icons/bi'
 
 const UserProfile = () => {
     const dispatch = useDispatch();
     const history = useHistory()
     const currentUser = useSelector(state => state.currentUser)
     const info = useSelector(state => state.info)
-    console.log(info.title);
-    const on = (event) => {
-        event.preventDefault();
-    }
     return (
         <div className='profile'>
-            <div className='empty__block'></div>
+            <div className='empty__block'><div className="welcome">Welcome <span className="user__name"> {currentUser.firstName}</span></div>
+                <div className='divForImg'></div></div>
+                
             <div className='profile__user'>
                 <div className='user__item'>
                 <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" alt="" />
                 <div>
-                    <p className='p'> {currentUser.firstName} {" "} {currentUser.lastName}</p>
-                    <p className='p'>{currentUser.userEmail}</p>
-                </div>
-                <button onClick={() => {
+                    <p className='p1'> {currentUser.firstName} {" "} {currentUser.lastName}</p>
+                    <p className='p2'>{currentUser.userEmail}</p>
+                    </div>
+                    <div className='user__btn'>
+                <button className='btn-user' onClick={() => {
                     history.push(routes.home)
-                }}>Go Home</button>
-                <button onClick={() => {
+                }}><div style={{color: 'green', fontSize: 20}}><BiHomeCircle/></div> Go Home</button>
+                <button className='btn-user' onClick={() => {
                 dispatch(log_out(history.push(routes.home)))
-                }}>logout</button>
+                }}><div style={{color: 'red', fontSize: 20, marginTop: 5}}><BiLogOutCircle/></div> Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
-    //     <Menu className='ss'>
-    //     <a id="home" className="menu-item" href="/">Home</a>
-    //     <a id="about" className="menu-item" href="/about">About</a>
-    //     <a id="contact" className="menu-item" href="/contact">Contact</a>
-    //     <a onClick={()=> on()} className="menu-item--small" href="">Settings</a>
-    //   </Menu>
     )
 }
 

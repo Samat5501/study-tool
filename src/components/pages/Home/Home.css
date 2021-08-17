@@ -1,12 +1,12 @@
 .main{
     text-align: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .block__2{
     background-color: #593d88;
     margin: 0 auto;
-    padding: 60px;
-    width: 1340px;
+    padding: 70px;
+    width: 1350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,30 +16,33 @@
 .home__img img{
     width: 200px;
     height: 200px;
-    border-radius: 50px;
-    background-size: cover;
+    /* border-radius: 90px; */
+    object-fit: contain;
+
+
 } 
 
 .home__img{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
-.main h1{
-    color: white;
+.h1{
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 600;
 }
 
-.main h2{
-    color: white;
+.h2{
     font-size: 28px;
     letter-spacing: 7px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .black__block{
 width: 100%;
-background: #000;
 text-align: center;
 }
 .home__button{
@@ -60,16 +63,54 @@ text-align: center;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 100%;
+    height: 520px;
 }
 .home__text{
-    color: white;
     width: 250px;
-    line-height: 23px;
+    height: 200px;
+    line-height: 25px;
+    font-size: 16px;
+    text-align: start;
+}
+
+.home__title{
+    margin-top: 30px;
+    font-size: 28px;
+   
 }
 
 @media screen and (max-width: 480px){
+    .homeData{
+        height: auto;
+    }
+    .home__text{
+        margin-top: 20px;
+        width: 370px;
+        height: auto;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .home__img img{
+        width: 250px;
+        height: 250px;
+        margin-top: 30px;
+        text-align: center;
+        /* border: chartreuse 1px; */
+    }
+    .h1{
+        font-size: 28px;
+    }
+    .h2{
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
     .block__2{
-        width: 480px;
+    background-color: #593d88;
+    margin: 0 auto;
+    padding: 160px;
+    width: 480px;
+    }
+    .black__block{
+    width: 480px;
     }
 }

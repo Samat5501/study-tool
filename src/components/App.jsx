@@ -9,7 +9,8 @@ import Login from './pages/Sign/Login'
 import UserProfile from './pages/UserProfile/UserProfile'
 import routes from './routes'
 import Main from './Main'
-
+import DarkModeToggle from './DarkMode/DarkModeToggle'
+import Need from './pages/NeedHelp/Need'
 
 function App() {
 const state = useSelector((state) => state);
@@ -30,45 +31,25 @@ useEffect(() => {
     localStorage.setItem('info', JSON.stringify(state))
 }, [info, state])
   
-    return (<div className='container'>
+  return (
+    <div className="container">
       <Router>
-            <div className="app-wrapper">
+        <div className=' app-wrapper'>
+          
           <Nav />
           <Switch>
             <Route exact path={routes.home}>
                <Home/>
             </Route>
             <Route path='/content'>
-               <Main/>
+              <Main />
             </Route>
+            <Route path={routes.help} component={Need}/>
              <Route path={routes.user_profile}>
                <UserProfile/>
             </Route>
              <Route path={routes.sign_up} component={In}/>
              <Route path={routes.login} component={Login}/>
-            {/* <Route path={routes.list}>
-               <List/>
-            </Route> */}
-          {/* {state.success ? (
-            <>
-                <Sidebar info={info}/>
-              <div className="app-content-wrapper">
-                <Route path={routes.list} component={List}/>
-                  <Route path='/details/:id'>
-                    <Details info={info}/>
-                  </Route> 
-                <Route path={routes.user_profile} component={UserProfile} />
-                <Route exact path='/html' component={Html} />
-                <Route  path='/css' component={Css} />
-          </div>
-            </>
-           ) : ( 
-              <div>
-                <Route exact path={routes.home} component={Home}/>
-                <Route path={routes.sign_up} component={In}/>
-                <Route path={routes.login} component={Login}/>
-            </div> 
-           )}  */}
            </Switch>
           </div>
       </Router>

@@ -15,7 +15,9 @@ color: ${(props) => {
         if (props.warning) return 'rgba(228, 175, 17, 0.2)'
         return '#897EFF'
     }};
-padding: 12px 32px;
+padding: 2px 32px;
+margin:  32px;
+margin-left: -30px;
 height: auto;
 border-color: ${(props) => {
         if (props.primary) return ' #8770FF'

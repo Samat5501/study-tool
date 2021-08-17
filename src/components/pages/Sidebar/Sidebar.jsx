@@ -5,6 +5,7 @@ import  routes  from '../../routes';
 import { useDispatch, useSelector } from 'react-redux';
 import { remove_info } from '../../store/actions';
 import TagList from './TagList';
+import { AiFillFolderAdd } from 'react-icons/ai'
 
 function Sidebar() {
     const dispatch = useDispatch()
@@ -25,28 +26,29 @@ function Sidebar() {
     return (
         <div className='sidebar side__bar-left'>
             <ul>
-                <li>
-                    <Link className="link" to='/html'>HTML</Link>
+                {/* <li className="navbar__link htcss">
+                    <Link className="navbar__link htcss"  to='/html'><>HTML</></Link>
                 </li>
-                <li>
-                    <Link className="link" to='/css'>css</Link>
-                </li>
+                <li className="navbar__link htcss">
+                    <Link className="navbar__link htcss ltsp" to='/css'>css</Link>
+                </li> */}
                 {success ? (<>
-                    <li>{info.map((tag, idx) => {
-                        return <div className='sidebar__tag'>
+                    <div>{info.map((tag, idx) => {
+                        return <div key={idx} className='sidebar__tag'>
+                            
                      <Link className='button-detail' to={`/details/${tag.id}`} key={idx}>
-                    <li  key={idx}>
+                    <div  key={idx}>
                         <TagList tag={tag} idx={idx} key={idx}/>
-                    </li>
+                    </div>
                    
                     </Link>
                     <div className='remove__btn' onClick={() => dispatch(remove_info(idx))}>x</div>
                    </div> 
-            })} </li>
+            })} </div>
                 </>) : ("")}
                     
             </ul>
-            <button className='tag__btn' onClick={() => check()}>Tag ++</button>
+            <div className='tag__btn' onClick={() => check()}><AiFillFolderAdd/> </div>
         </div>
     )
 }

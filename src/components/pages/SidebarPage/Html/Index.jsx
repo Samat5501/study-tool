@@ -1,9 +1,9 @@
-// import React from 'react'
+import './html.css'
 const Html = () => {
     return (
-        <div>
-            hello I am HTML Page
-            <p>Lorem ipsum dolor sit amet consectetur
+        <div className="htmlMain">
+            <h1 className="titleHtml">HTML</h1>
+            Description: <p>Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Officia in non hic,
                 ex cum voluptatem autem commodi tenetur
                 perspiciatis. Officiis temporibus iusto
@@ -23,8 +23,10 @@ const Html = () => {
                 quas quos voluptate vitae deleniti hic! Expedita temporib
                 us cupiditate, odio voluptatibus odit, dignissimos, recus
                 andae adipisci iste laborum placeat error.</p>
+                Code: <code class="highlight"> &lt;h1&gt; Hello World&lt;/h1&gt;</code><br></br>
+                Link Title: <p>Learn HTML</p>
+                Link <a href="">https://www.learn-html.org/</a>
         </div>
     )
 }
-
 export default Html
