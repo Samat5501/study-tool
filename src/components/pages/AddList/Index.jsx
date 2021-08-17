@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { add_info } from '../../store/actions'
-import { Button } from 'antd';
-import routes from '../../routes'
 import './List.css'
 import { useHistory } from 'react-router-dom';
-import { log_out } from '../../store/actions';
+import { MdCancel} from 'react-icons/md'
+import { AiOutlineFileAdd} from 'react-icons/ai'
 
 var uniqid = require('uniqid');
 const List = () => {
@@ -43,25 +42,29 @@ const List = () => {
     }
     return (
         <div className="list">
-            title
+           <span className='list__title'>title</span> 
             <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="title"
+                placeholder="Title"
                 type="text" />
-            Description
+            <span className='list__title'>Description</span> 
             <textarea
                 className="input"
+                placeholder="Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                cols="30" rows="10"/>
-            code <textarea className="input" value={code} onChange={(e) => setCode(e.target.value)} placeholder='write code' type='code' name="code"  cols="30" rows="10"></textarea>
-            useful links
-            title <input value={linkTitle} onChange={(e) => setLinkTitle(e.target.value)} type="text" />
-            link <textarea className="input" value={link} onChange={(e) => setLink(e.target.value)} placeholder='write link' name="link" id="" cols="30" rows="10"></textarea>
-            <div>
-            <Button type='primary' onClick={onAdd}>add Input</Button>
-            <Button type='primary' danger onClick={onCancel}>Cancel</Button>
+                id="des" cols="20" rows="25"/>
+            <span className='list__title'>code </span> 
+            <textarea className="input" value={code} onChange={(e) => setCode(e.target.value)} placeholder='Write code' type='code' name="code" id="code" cols="15" rows="20"></textarea>
+             <span className='list__title'>link title</span>
+            <input className='input' placeholder="Link Name" value={linkTitle} onChange={(e) => setLinkTitle(e.target.value)} type="text" />
+             <span className='list__title'>link</span> 
+            <input className="input input_link" style={{height: 40}} value={link} onChange={(e) => setLink(e.target.value)} placeholder='write link'/>
+            <div className='list__btn'>
+            <div className='btn-list_1' onClick={onAdd}><AiOutlineFileAdd/> Add</div>
+                <div className='btn-list_3' danger onClick={onCancel}><MdCancel />Cancel</div>
+                {/* <button><div style={{color: 'red', fontSize: 20, marginTop: 5}}></div> Logout</button> */}
             </div>
         </div>
     )

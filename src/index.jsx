@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import App from "./components/App";
 import "./styles.css";
 import 'antd/dist/antd.css';
-// import { store } from "./components/store";
 import { createStore } from "redux";
 import { infoReducer } from "./components/store/reducers";
 

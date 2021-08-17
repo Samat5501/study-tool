@@ -22,10 +22,11 @@ export const infoReducer = (state = local ? local : defaultState, action) => {
         return {
           ...state,
           newList: [
-            ...state.newList,
+            state.newList,
             {
               newTitle: action.value.newTitle,
               newDescription: action.value.newDescription,
+              id: action.value.id
             }
           ]
         }

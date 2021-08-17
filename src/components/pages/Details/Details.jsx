@@ -2,53 +2,63 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import './details.css'
-import { Button } from 'antd';
-import { remove_info } from '../../store/actions';
+import { add_list } from '../../store/actions';
 
 const Details = () => {
-    const { title, id} = useParams()
-    console.log( title, id.length);
+    const {id} = useParams()
     const info = useSelector(state => state.info)
+    const newList = useSelector(state => state.newList)
     const dispatch = useDispatch()
    
     const item = info.filter((f) => f.id === id)[0];
 
-    const [title1, setTitle] = useState('')
-    const [list, setList] = useState('')
-
+    const [newTitle, setNewTitle] = useState('')
+    const [newDescription, setNewDescription] = useState('')
+    var uniqid = require('uniqid');
+console.log(newList);
     const onAdd = () => {
-        setTitle('')
-        setList('')
+        dispatch(add_list({
+            newTitle,
+            newDescription,
+            id: uniqid()
+        }))
+        // setTitle('')
+        // setList('')
     }
     return (
-        <div>
-            <div>
-                <p className='title'>{item.title}</p>
+        <div className='details'>
+            {/* <div> */}
+                <p className='title__details'>{item.title}</p>
                 {item.description ? (
-                    <span>description: </span>
+                    <div className='description__details'>description: </div>
                 ) : ("")}
-                <p>{item.description}</p>
+                <p className='p__details1 details_des'>{item.description}</p>
                 {item.code ? (
                   <span>your code:</span>   
                 ):("")}
-                <p>{item.code}</p>
+                <p className='p__details code__details'><p>{item.code}</p></p>
                 {item.linkTitle ? (
                   <span>Link Title:</span>   
                 ):("")}
-                <p>{item.linkTitle}</p>
+                <p className='p__details'>{item.linkTitle}</p>
                 {item.link ? (
-                <span>Link:</span>
-                ):("")}
-                <a href={item.link}>{item.linkTitle}</a>
-                <span>{title1}</span>
-                <p>{list}</p>
-            </div>
+                <span className="link__title">Link:</span>
+                ) : ("")}
+                {/* <p className='p__details link__details'>{item.link}</p> */}
+                 <a className='link__link' href={item.link}>{item.linkTitle}</a>
+                {/*<span>{newList.map((list, idx) => {
+                    return (
+                        <span>{list.newTitle}</span>
+                    )
+                })}</span>
+                <span>{newDescription}</span> */}
+            {/* </div> */}
             
-            <span>Enter title</span>
-            <input value={title1} onChange={(e) => setTitle(e.target.value)} type="text" />
+            {/* <span>Enter title</span>
+            <input value={newTitle} onChange={(e) => setNewTitle(e.target.value)} type="text" />
             <span>Enter List</span>
-            <input value={list} onChange={(e) => setList(e.target.value)}  type="text" />
-            <Button type="primary" onClick={onAdd}>Add</Button>
+            <input className='input' value={newDescription} onChange={(e) => setNewDescription(e.target.value)}  type="text" />
+            <Button type="primary" onClick={onAdd}>Add</Button> */}
 
         </div>
     )

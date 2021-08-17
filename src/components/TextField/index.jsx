@@ -11,17 +11,19 @@ export const Label = styled.label`
 	font-size: 12px;
 	line-height: 12%;
 	color: #565a65;
-	/* margin-bottom: 8px; */
+	margin-bottom: 8px;
 `
 
 export const CustomInput = styled(Input)`
 	border-bottom: 1px solid #b6bfd9;
 	margin: 6px 0;
-	border-top: 0;
+	border-top: 30px;
 	border-right: 0;
 	border-left: 0;
 	width: 250px;
+	height: 50px;
 	border-radius: 0px;
+	text-align: center;
 
 	&:focus {
 		box-shadow: none;
@@ -29,7 +31,7 @@ export const CustomInput = styled(Input)`
 	}
 	&::placeholder {
 		font-family: 'Open Sans';
-		font-size: 16px;
+		font-size: 26px;
 		line-height: 150%;
 		color: #dadfeb;
 	}

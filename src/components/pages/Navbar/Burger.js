@@ -38,6 +38,9 @@ const StyledBurger = styled.div`
 
 const Burger = () => {
   const [open, setOpen] = useState(false);
+  // window.addEventListener("keydown", (event) => {
+  //   setOpen(false)
+  // });
 
   return (
     <>

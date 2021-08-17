@@ -2,7 +2,6 @@ import React,  {useEffect, useState}  from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './Sign.css'
 import { TextField } from '../../TextField';
-import { CustomButton } from '../../CustomButton';
 import { Input, Space } from 'antd';
 import { add_user } from '../../store/actions';
 import validation from './Validation'
@@ -12,7 +11,7 @@ import { Link, useHistory } from 'react-router-dom';
 const In = () => {
 
     const history = useHistory()
-  // 
+  // state
   const [values, setValues] = useState({
         name: "",
         email: "",
@@ -45,8 +44,6 @@ const In = () => {
     }, [state, values.email, values.name, values.password,history]);
   
   const onAdd = () => {
-        //  (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value)
-        // let checkEmail = /^([A-Za-z0-9_\-\.])+\@([gmail|GMAIL])+\.(com)$/;
         let checkEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (values.name !== "" && checkEmail.test(values.email) && values.password.length > 7) {
             dispatch(add_user({
@@ -58,17 +55,25 @@ const In = () => {
                 success: true,
             })    
             )
-
+history.push(routes.user_profile)
         }
         else {
             setErrors(validation(values))
       }
-      history.push(routes.sign_up)
+      
     }
 
 
-    return (
-        <div className="sign">
+  return (
+      <div className="container bg-bl">
+      <div className="sign">
+        <div className="empty_sign-page">
+         <div className="img_title">One of us?</div> 
+         <p className="img_text">If you already has an account, just sign in. We've missed you!</p>
+        <span className='sign_link'><Link to={routes.login}>Sign in </Link></span>
+        </div>
+        <div className='sign_user'>
+        <div className='sign_up-h1'>Sign Up</div>
         <div className='first__input'>
           <div>
           <TextField
@@ -81,7 +86,7 @@ const In = () => {
            
           </div>
         </div>
-        <div>
+        <div className="second__input"> 
         <TextField
             value={values.email}
             onChange={handleChange}
@@ -102,9 +107,10 @@ const In = () => {
           </Space>
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
-        <CustomButton onClick={()=> onAdd()} className='.buttonSign'>sign up</CustomButton>
-        <h3>Already have an account? <Link to={routes.login}>Sign in </Link> </h3>
+        <span onClick={()=> onAdd()} className='sign_link_2'>sign up</span>
         </div>
+      </div>
+    </div>
     )
 }
 
