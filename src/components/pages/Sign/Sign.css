@@ -115,16 +115,19 @@ input:hover {
         color: white;
         background: transparent;
         border-radius: 30px;
-        width: 120px;
-        height: 45px;
-        margin-top: 10px;
+        width: 130px;
+        height: 46px;
+        margin-top: 14px;
         margin-left: 80px;
-        font-size: 20px;
+        font-size: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 3px solid white;
         cursor: pointer;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 10px 30px;
     }
     .sign_link1{
     position: relative;

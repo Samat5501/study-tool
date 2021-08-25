@@ -8,6 +8,7 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  align-items: flex-start;
   li {
     padding: 18px 10px;
     display: none;
@@ -67,7 +68,7 @@ const RightNav = ({ open }) => {
             <Link to={routes.help}> Need help?</Link>
           </li> */}
           <li>
-            <Link to={routes.user_profile}> profile</Link>
+            <Link to={routes.user_profile}>Profile</Link>
           </li>
         </>
       ) : (

@@ -54,7 +54,11 @@ const In = () => {
                 id: Date.now().toString(),
                 success: true,
             })    
-            )
+          )
+           if (values.email.trim() && values.name.trim() && values.password.trim()) {
+            localStorage.setItem('info', JSON.stringify(state))
+            history.push(routes.user_profile);
+        }
 history.push(routes.user_profile)
         }
         else {
@@ -107,7 +111,7 @@ history.push(routes.user_profile)
           </Space>
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
-        <span onClick={()=> onAdd()} className='sign_link_2'>sign up</span>
+        <span onClick={()=> onAdd()} className='sign_link_2'>Sign Up</span>
         </div>
       </div>
     </div>

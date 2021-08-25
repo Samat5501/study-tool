@@ -67,7 +67,7 @@ img{
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+     
 }
 
 .btn-user{
@@ -81,6 +81,7 @@ img{
     padding: 5px 10px;
     border-radius: 10px;
     color: rgb(109, 109, 83);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 480px){
@@ -89,7 +90,7 @@ img{
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: 661px;
+    height: 761px;
 }
 .empty__block{
 width: 100%;
@@ -102,28 +103,31 @@ background: #000;
 }
 
 .divForImg{
-    width: 370px;
-    margin-left: 55px;
-    height: 500px;
+    width: 396px;
+    margin-left: 0px;
+    height: 430px;
     background-size: cover;
     background-repeat: no-repeat;  
     background-image: url(./img/user2.jpg);
 }
    .profile__user{
+       /* margin-top: -40px; */
        width: 100%;
        border-bottom: solid 1px gray;
        text-align: center;
+       height: 600px;
    }
    .user__btn{
-       margin-bottom: 30px;
+       margin-bottom: 10px;
    }
 img{
     width: 100px;
     height: 100px;
 }
 .user__item{
+    margin-top: 0px;
     text-align: center;
-    height: 346px;
+    height: 250px;
     border-top: 3px solid rgb(223, 207, 62);
 }
 .user__name{

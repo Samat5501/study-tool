@@ -10,7 +10,7 @@ const defaultState = {
   info: [],
   localUsers: [],
   currentUser: {},
-  newList: [],
+  // newList: [],
   success: false,
   button: false,
 }
@@ -18,18 +18,18 @@ const defaultState = {
 export const infoReducer = (state = local ? local : defaultState, action) => {
     switch (action.type) {
        // list
-      case ADD_LIST:
-        return {
-          ...state,
-          newList: [
-            state.newList,
-            {
-              newTitle: action.value.newTitle,
-              newDescription: action.value.newDescription,
-              id: action.value.id
-            }
-          ]
-        }
+      // case ADD_LIST:
+      //   return {
+      //     ...state,
+      //     newList: [
+      //       state.newList,
+      //       {
+      //         newTitle: action.value.newTitle,
+      //         newDescription: action.value.newDescription,
+      //         id: action.value.id
+      //       }
+      //     ]
+      //   }
         case ADD_INFO:
             return {
                 ...state,

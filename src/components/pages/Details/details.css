@@ -2,7 +2,8 @@
     width: 1555px;
     height: 90.8vh;
     text-align: start;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     border-bottom: solid 2px gray;
 }
 
@@ -13,6 +14,7 @@
     display: flex;
     z-index: 0;
     color: red;
+    margin-left: 10px;
 }
 
 .title__details div{
@@ -44,8 +46,9 @@
     width: 700px;
     line-height: 30px;
     font-size: 18px;
-    color: rgb(207, 145, 94);
+    color: rgb(209, 136, 77);
     text-align: start;
+    text-align: alignment type;
 }
 
 .link__details{
