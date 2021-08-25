@@ -32,11 +32,11 @@ console.log(newList);
                 {item.description ? (
                     <div className='description__details'>description: </div>
                 ) : ("")}
-                <p className='p__details1 details_des'>{item.description}</p>
+                <p className='p__details1 details_des'><pre>{item.description}</pre></p>
                 {item.code ? (
                   <span>your code:</span>   
                 ):("")}
-                <p className='p__details code__details'><p>{item.code}</p></p>
+                <p className='p__details code__details'><pre>{item.code}</pre></p>
                 {item.linkTitle ? (
                   <span>Link Title:</span>   
                 ):("")}

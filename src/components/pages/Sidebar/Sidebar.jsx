@@ -42,7 +42,10 @@ function Sidebar() {
                     </div>
                    
                     </Link>
-                    <div className='remove__btn' onClick={() => dispatch(remove_info(idx))}>x</div>
+                            <div className='remove__btn' onClick={() => {
+                                dispatch(remove_info(idx))
+                                history.push('/content')
+                            }}>x</div>
                    </div> 
             })} </div>
                 </>) : ("")}

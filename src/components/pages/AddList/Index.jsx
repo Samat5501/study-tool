@@ -44,6 +44,7 @@ const List = () => {
         <div className="list">
            <span className='list__title'>title</span> 
             <input
+                className='input'
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Title"
